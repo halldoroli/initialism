@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\""
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

@@ -5,5 +5,5 @@ export function Title() {
       <p className="text-gray-500">ini·tial·ism</p>
       <p>an abbreviation formed from initial letters</p>
     </div>
-  )
+  );
 }

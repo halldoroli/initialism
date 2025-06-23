@@ -10,9 +10,9 @@ export default function Home() {
       <Title />
       <div className="flex space-x-2">
         <Button variant="outline">
-          <Link href="game" className="flex items-center">
+          <Link href="game" className="flex items-center font-mono">
             <ChevronRightIcon />
-            Play
+            play
           </Link>
         </Button>
         <ThemeToggle />

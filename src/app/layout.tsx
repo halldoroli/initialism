@@ -11,7 +11,7 @@ const dmSans = DM_Sans({
 const dmMono = DM_Mono({
   variable: "--font-dm-mono",
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${dmSans.variable} ${dmMono.variable} antialiased`}
-      >
+      <body className={`${dmSans.variable} ${dmMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

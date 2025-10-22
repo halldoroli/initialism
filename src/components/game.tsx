@@ -9,11 +9,11 @@ const text = "Federal Bureau of Investigation";
 
 
 export default function Game() {
-  const [guess, setGuess] = useState("tests asd asd");
+  const [guess, setGuess] = useState("tests asd");
 
   return (
     <div>
-      <UnderlinedInput value={guess} length={20} />
+      <UnderlinedInput value={guess} length={10} />
     </div>
   )
 }

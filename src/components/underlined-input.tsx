@@ -5,15 +5,18 @@ interface UnderlinedInputProps {
   length: number;
 }
 
-export default function UnderlinedInput({ value, length }: UnderlinedInputProps) {
+export default function UnderlinedInput({
+  value,
+  length,
+}: UnderlinedInputProps) {
   const letters = value.toLowerCase().padEnd(length, " ").split("");
 
   return (
-    <div className="flex gap-2 justify-center">
+    <div className="flex justify-center gap-2">
       {letters.map((char, idx) => (
         <div
           key={idx}
-          className="w-10 border-b-2 border-black text-lg text-center font-mono"
+          className="w-10 border-b-2 border-black text-center font-mono text-lg"
         >
           {char !== " " ? char : ""}
         </div>

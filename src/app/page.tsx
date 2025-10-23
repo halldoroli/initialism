@@ -10,7 +10,10 @@ export default function Home() {
       <Title />
       <div className="flex items-center gap-1">
         <Button variant="outline" className="rounded-full font-mono" asChild>
-          <Link href="/game"><ChevronRightIcon />play</Link>
+          <Link href="/game">
+            <ChevronRightIcon />
+            play
+          </Link>
         </Button>
         <ThemeToggle />
       </div>

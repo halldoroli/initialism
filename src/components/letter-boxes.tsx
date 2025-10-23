@@ -27,9 +27,7 @@ export default function LetterBoxes({
 
             const isCorrect = correctLetters.includes(globalIndex);
 
-            const displayChar = isCorrect
-              ? char
-              : guess[guessPointer] || "";
+            const displayChar = isCorrect ? char : guess[guessPointer] || "";
 
             if (!isCorrect) {
               guessPointer++;
@@ -38,12 +36,11 @@ export default function LetterBoxes({
             return (
               <div
                 key={globalIndex}
-                className={`w-10 h-10 flex items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out
-                  ${
-                    isCorrect
-                      ? "bg-green-600 border-green-200 text-white dark:bg-green-800 dark:border-green-400"
-                      : "border-gray-400 bg-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
-                  }`}
+                className={`flex h-10 w-10 items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out ${
+                  isCorrect
+                    ? "border-green-200 bg-green-600 text-white dark:border-green-400 dark:bg-green-800"
+                    : "border-gray-400 bg-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+                }`}
               >
                 {displayChar}
               </div>

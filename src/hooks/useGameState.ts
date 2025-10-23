@@ -32,11 +32,11 @@ export default function useGameState(answer: string, MAX_GUESSES: number) {
     setGuess("");
 
     const allCorrect = answerChars.every(
-      (char, i) => char === " " || newCorrect.includes(i)
+      (char, i) => char === " " || newCorrect.includes(i),
     );
     if (allCorrect) {
       setGameOver(true);
-      setWinner(true)
+      setWinner(true);
       return;
     }
 
@@ -49,7 +49,10 @@ export default function useGameState(answer: string, MAX_GUESSES: number) {
     if (gameOver) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (/^[a-zA-Z]$/.test(e.key) && guess.length + correctLetters.length < answerLength) {
+      if (
+        /^[a-zA-Z]$/.test(e.key) &&
+        guess.length + correctLetters.length < answerLength
+      ) {
         setGuess((prev) => prev + e.key.toUpperCase());
       }
 
@@ -57,7 +60,10 @@ export default function useGameState(answer: string, MAX_GUESSES: number) {
         setGuess((prev) => prev.slice(0, -1));
       }
 
-      if (e.key === "Enter" && guess.length + correctLetters.length === answerLength) {
+      if (
+        e.key === "Enter" &&
+        guess.length + correctLetters.length === answerLength
+      ) {
         submitGuess();
       }
     };

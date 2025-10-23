@@ -8,15 +8,22 @@ const answer = "test test";
 const MAX_GUESSES = 6;
 
 export default function Game() {
-  const { guess, correctLetters, guessesLeft, gameOver, winner } = useGameState(answer, MAX_GUESSES);
+  const { guess, correctLetters, guessesLeft, gameOver, winner } = useGameState(
+    answer,
+    MAX_GUESSES,
+  );
 
   return (
-    <main className="flex flex-col pt-16 gap-16 items-center justify-center">
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-4xl font-sans font-bold">{initialism}</h1>
+    <div className="flex flex-col items-center justify-center gap-16 pt-16">
+      <div className="flex flex-col items-center justify-center gap-4">
+        <h1 className="font-sans text-4xl font-bold">{initialism}</h1>
         <p className="font-sans">guesses left: {guessesLeft}</p>
       </div>
-      <LetterBoxes answer={answer.toUpperCase()} guess={guess} correctLetters={correctLetters} />
-    </main>
+      <LetterBoxes
+        answer={answer.toUpperCase()}
+        guess={guess}
+        correctLetters={correctLetters}
+      />
+    </div>
   );
 }

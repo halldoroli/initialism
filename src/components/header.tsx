@@ -9,23 +9,47 @@ type HeaderProps = {
 
 export function Header({ title }: HeaderProps) {
   return (
-    <div className="flex justify-between items-center w-full">
+    <div className="flex w-full items-center justify-between">
       <div className="flex items-center gap-2">
         <h1 className="font-mono text-xl">{title}</h1>
         {title !== "initialism" && (
-          <Button variant="outline" size="sm" className="rounded-full font-mono" asChild>
-            <Link href="/game"><ChevronLeft />back</Link>
+          <Button
+            variant="outline"
+            size="sm"
+            className="rounded-full font-mono"
+            asChild
+          >
+            <Link href="/game">
+              <ChevronLeft />
+              back
+            </Link>
           </Button>
         )}
       </div>
       <div className="flex items-center gap-1">
         {title === "initialism" && (
           <>
-            <Button variant="outline" size="sm" className="rounded-full font-mono" asChild>
-              <Link href="/archive"><Archive />archive</Link>
+            <Button
+              variant="outline"
+              size="sm"
+              className="rounded-full font-mono"
+              asChild
+            >
+              <Link href="/archive">
+                <Archive />
+                archive
+              </Link>
             </Button>
-            <Button variant="outline" size="sm" className="rounded-full font-mono" asChild>
-              <Link href="/instructions"><Info />instructions</Link>
+            <Button
+              variant="outline"
+              size="sm"
+              className="rounded-full font-mono"
+              asChild
+            >
+              <Link href="/instructions">
+                <Info />
+                instructions
+              </Link>
             </Button>
           </>
         )}

@@ -70,7 +70,7 @@ export default function useGameState(answer: string, MAX_GUESSES: number) {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [guess, correctLetters, answerLength, gameOver, winner, submitGuess]);
+  }, [guess, correctLetters, answerLength, gameOver, submitGuess]);
 
-  return { guess, correctLetters, guessesLeft, gameOver };
+  return { guess, correctLetters, guessesLeft, gameOver, winner };
 }

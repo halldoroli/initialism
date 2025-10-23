@@ -16,10 +16,14 @@ export default function Game() {
   return (
     <div className="flex flex-col items-center justify-center">
       {gameOver && winner && (
-        <h1 className="scroll-m-20 text-center text-4xl font-sans font-extrabold tracking-tight pt-16">You got it!</h1>
+        <h1 className="scroll-m-20 pt-16 text-center font-sans text-4xl font-extrabold tracking-tight">
+          You got it!
+        </h1>
       )}
       {gameOver && !winner && (
-        <h1 className="scroll-m-20 text-center text-4xl font-sans font-extrabold tracking-tight pt-16">So close! {initialism} stands for {answer}</h1>
+        <h1 className="scroll-m-20 pt-16 text-center font-sans text-4xl font-extrabold tracking-tight">
+          So close! {initialism} stands for {answer}
+        </h1>
       )}
       <div className="flex flex-col gap-16 pt-16">
         <div className="flex flex-col items-center justify-center gap-4">

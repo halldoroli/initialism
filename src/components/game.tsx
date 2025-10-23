@@ -1,41 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import LetterBoxes from "./letter-boxes";
+import useGameState from "@/hooks/useGameState";
 
-const initialism = "FAPHA";
-const answer = "Fellow of the American Public Health Association";
+const initialism = "TT";
+const answer = "test test";
+const MAX_GUESSES = 6;
 
 export default function Game() {
-  const MAX_GUESSES = 6;
-  const answerWithoutSpaces = answer.replace(/\s/g, "");
-  const answerLength = answerWithoutSpaces.length;
-  const [correctLetters, setCorrectLetters] = useState<number[]>([1]);
-  const [guess, setGuess] = useState("");
-  const [guessesLeft, setGuesses] = useState(MAX_GUESSES);
-  const [gameOver, setGameOver] = useState(false);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (gameOver) return;
-
-      if (/^[a-zA-Z]$/.test(e.key) && guess.length + correctLetters.length < answerLength) {
-        setGuess((prev) => prev + e.key.toUpperCase());
-      }
-
-      if (e.key === "Backspace") {
-        setGuess((prev) => prev.slice(0, -1));
-      }
-
-      if (e.key === "Enter" && guess.length + correctLetters.length === answerLength) {
-        // submitGuess();
-        console.log("mjes")
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [guess, gameOver, answerLength, correctLetters]);
+  const { guess, correctLetters, guessesLeft, gameOver, winner } = useGameState(answer, MAX_GUESSES);
 
   return (
     <main className="flex flex-col pt-16 gap-16 items-center justify-center">

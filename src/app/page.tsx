@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div className="flex h-full flex-col items-center justify-center space-y-8">
       <Title />
-      <div className="flex space-x-2">
-        <Button variant="outline">
-          <Link href="game" className="flex items-center font-mono">
+      <div className="flex items-center gap-1">
+        <Button variant="outline" className="rounded-full font-mono" asChild>
+          <Link href="/game">
             <ChevronRightIcon />
             play
           </Link>

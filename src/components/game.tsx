@@ -3,6 +3,7 @@
 import Keyboard from "./keyboard";
 import LetterBoxes from "./letter-boxes";
 import useGameState from "@/hooks/useGameState";
+import { GuessesBadge } from "./guesses-badge";
 
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
@@ -32,8 +33,8 @@ export default function Game() {
       )}
       <div className="flex flex-col gap-16 pt-16">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="font-sans text-4xl font-bold">{initialism}</h1>
-          <p className="font-sans">guesses left: {guessesLeft}</p>
+          <h1 className="font-mono text-4xl font-bold">{initialism}</h1>
+          <GuessesBadge guessesLeft={guessesLeft} />
         </div>
         <LetterBoxes
           answer={answer.toUpperCase()}

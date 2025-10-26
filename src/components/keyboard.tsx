@@ -13,14 +13,14 @@ const Keyboard = ({ onKeyPress }: KeyboardProps) => {
   ];
 
   return (
-    <div className="font-bold">
+    <div className="font-mono">
       {rows.map((row, i) => (
-        <div key={i} className="mb-2 flex justify-center">
+        <div key={i} className="mb-3 flex justify-center gap-1 sm:gap-2">
           {row.map((key) => (
             <button
               key={key}
               onClick={() => onKeyPress(key)}
-              className={`m-1 flex h-10 items-center justify-center rounded-xs bg-gray-500 text-white sm:h-12 dark:bg-gray-700 ${
+              className={`flex h-10 items-center justify-center rounded-xs bg-gray-500 text-white sm:h-12 dark:bg-gray-700 ${
                 key === "Enter"
                   ? "w-10 bg-green-600 sm:w-12 dark:bg-green-800"
                   : key === "Backspace"
@@ -29,9 +29,9 @@ const Keyboard = ({ onKeyPress }: KeyboardProps) => {
               }`}
             >
               {key === "Enter" ? (
-                <ArrowRight size="20" />
+                <ArrowRight size="16" />
               ) : key === "Backspace" ? (
-                <X size="20" />
+                <X size="16" />
               ) : (
                 key
               )}

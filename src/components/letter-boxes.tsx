@@ -18,7 +18,6 @@ export default function LetterBoxes({
       {words.map((word, wi) => (
         <div key={wi} className="flex gap-2">
           {word.split("").map((char, localIndex) => {
-            // Calculate global index for this character
             const globalIndex =
               answer
                 .split(" ")
@@ -36,7 +35,7 @@ export default function LetterBoxes({
             return (
               <div
                 key={globalIndex}
-                className={`flex h-10 w-10 items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out ${
+                className={`flex w-6 h-6 sm:w-10 sm:h-10 items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out ${
                   isCorrect
                     ? "border-green-200 bg-green-600 text-white dark:border-green-400 dark:bg-green-800"
                     : "border-gray-400 bg-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"

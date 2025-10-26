@@ -1,5 +1,6 @@
 "use client";
 
+import Keyboard from "./keyboard";
 import LetterBoxes from "./letter-boxes";
 import useGameState from "@/hooks/useGameState";
 
@@ -8,10 +9,14 @@ const answer = "Federal Bureau of Investigation";
 const MAX_GUESSES = 6;
 
 export default function Game() {
-  const { guess, correctLetters, guessesLeft, gameOver, winner } = useGameState(
-    answer,
-    MAX_GUESSES,
-  );
+  const {
+    guess,
+    correctLetters,
+    guessesLeft,
+    gameOver,
+    winner,
+    handleKeyInput,
+  } = useGameState(answer, MAX_GUESSES);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -35,6 +40,7 @@ export default function Game() {
           guess={guess}
           correctLetters={correctLetters}
         />
+        <Keyboard onKeyPress={handleKeyInput} />
       </div>
     </div>
   );

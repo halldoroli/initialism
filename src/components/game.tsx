@@ -3,6 +3,8 @@
 import Keyboard from "./keyboard";
 import LetterBoxes from "./letter-boxes";
 import useGameState from "@/hooks/useGameState";
+import { Badge } from "./ui/badge";
+import { Crosshair } from "lucide-react";
 
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
@@ -32,8 +34,13 @@ export default function Game() {
       )}
       <div className="flex flex-col gap-16 pt-16">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="font-sans text-4xl font-bold">{initialism}</h1>
-          <p className="font-sans">guesses left: {guessesLeft}</p>
+          <h1 className="font-mono text-4xl font-bold">{initialism}</h1>
+          <Badge
+            className="bg-slate-600 text-white px-3 text-md"
+          >
+            <Crosshair />
+            {guessesLeft}
+          </Badge>
         </div>
         <LetterBoxes
           answer={answer.toUpperCase()}

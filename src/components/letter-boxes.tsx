@@ -35,7 +35,7 @@ export default function LetterBoxes({
             return (
               <div
                 key={globalIndex}
-                className={`flex h-5 w-5 items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out sm:h-10 sm:w-10 ${
+                className={`flex h-6 w-6 items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out sm:h-10 sm:w-10 ${
                   isCorrect
                     ? "border-green-200 bg-green-600 text-white dark:border-green-400 dark:bg-green-800"
                     : "border-gray-400 bg-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"

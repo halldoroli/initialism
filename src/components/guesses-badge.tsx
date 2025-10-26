@@ -16,7 +16,7 @@ export function GuessesBadge({ guessesLeft }: GuessesBadgeProps) {
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
-        <p>
+        <p className="font-mono">
           {guessesLeft === 1
             ? "Last guess!"
             : `${guessesLeft} guesses remaining`}

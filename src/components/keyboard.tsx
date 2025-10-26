@@ -22,7 +22,7 @@ const Keyboard = ({ onKeyPress }: KeyboardProps) => {
               onClick={() => onKeyPress(key)}
               
               className={`m-1 h-10 sm:h-12 rounded-xs bg-gray-600  flex items-center justify-center ${
-                  key === "Enter" || key === "Backspace" ? "w-10 sm:w-12" : "w-8 sm:w-10"
+                  key === "Enter" ? "w-10 sm:w-12 bg-green-900" : key === "Backspace" ? "w-10 sm:w-12 bg-red-900" : "w-8 sm:w-10"
                 }`}
             >
               {key === "Enter" ? <ArrowRight size="20" /> : key === "Backspace" ? <X size="20" /> : key}

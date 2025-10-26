@@ -21,7 +21,7 @@ export function Header({ title }: HeaderProps) {
           >
             <Link href="/game">
               <ChevronLeft />
-              back
+              <span className="hidden sm:inline">back</span>
             </Link>
           </Button>
         )}
@@ -37,7 +37,7 @@ export function Header({ title }: HeaderProps) {
             >
               <Link href="/archive">
                 <Archive />
-                archive
+                <span className="hidden sm:inline">archive</span>
               </Link>
             </Button>
             <Button
@@ -48,7 +48,7 @@ export function Header({ title }: HeaderProps) {
             >
               <Link href="/instructions">
                 <Info />
-                instructions
+                <span className="hidden sm:inline">instructions</span>
               </Link>
             </Button>
           </>

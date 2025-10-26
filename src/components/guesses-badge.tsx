@@ -11,7 +11,7 @@ export function GuessesBadge({ guessesLeft }: GuessesBadgeProps) {
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge className="text-md bg-red-700 px-3 font-mono text-white">
-          {guessesLeft === 1 || guessesLeft == 0 ? <HeartCrack /> : <Heart />}
+          {guessesLeft < 2 ? <HeartCrack /> : <Heart />}
           {guessesLeft}
         </Badge>
       </TooltipTrigger>

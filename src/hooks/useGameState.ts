@@ -45,32 +45,46 @@ export default function useGameState(answer: string, MAX_GUESSES: number) {
     }
   }, [answer, guess, correctLetters, guessesLeft]);
 
-  useEffect(() => {
-    if (gameOver) return;
+  const handleKeyInput = useCallback(
+    (key: string) => {
+      if (gameOver) return;
 
-    const handleKeyDown = (e: KeyboardEvent) => {
       if (
-        /^[a-zA-Z]$/.test(e.key) &&
+        /^[a-zA-Z]$/.test(key) &&
         guess.length + correctLetters.length < answerLength
       ) {
-        setGuess((prev) => prev + e.key.toUpperCase());
+        setGuess((prev) => prev + key.toUpperCase());
       }
 
-      if (e.key === "Backspace") {
+      if (key === "Backspace") {
         setGuess((prev) => prev.slice(0, -1));
       }
 
       if (
-        e.key === "Enter" &&
+        key === "Enter" &&
         guess.length + correctLetters.length === answerLength
       ) {
         submitGuess();
       }
-    };
+    },
+    [gameOver, guess, correctLetters, answerLength, submitGuess],
+  );
 
+  useEffect(() => {
+    if (gameOver) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => handleKeyInput(e.key);
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [guess, correctLetters, answerLength, gameOver, submitGuess]);
 
-  return { guess, correctLetters, guessesLeft, gameOver, winner };
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [gameOver, handleKeyInput]);
+
+  return {
+    guess,
+    correctLetters,
+    guessesLeft,
+    gameOver,
+    winner,
+    handleKeyInput,
+  };
 }

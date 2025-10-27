@@ -34,6 +34,7 @@ export function Header({ title }: HeaderProps) {
               size="sm"
               className="rounded-full font-mono"
               asChild
+              hidden
             >
               <Link href="/archive">
                 <Archive />
@@ -45,6 +46,7 @@ export function Header({ title }: HeaderProps) {
               size="sm"
               className="rounded-full font-mono"
               asChild
+              hidden
             >
               <Link href="/instructions">
                 <Info />

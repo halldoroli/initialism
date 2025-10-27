@@ -10,7 +10,6 @@ import {
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Smile, Star } from "lucide-react";
-import { Confetti } from "./ui/confetti";
 
 type GameOverDialogProps = {
   gameOver: boolean;
@@ -31,7 +30,7 @@ export default function GameOverDialog({
     if (gameOver) {
       setTimeout(() => {
         setOpen(true);
-      }, 1000);
+      }, 2000);
     } else {
       setOpen(false);
     }
@@ -39,9 +38,6 @@ export default function GameOverDialog({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      {gameOver && winner && (
-        <Confetti className="absolute top-0 left-0 z-0 size-full" />
-      )}
       <DialogContent className="font-mono">
         <DialogHeader>
           <DialogTitle>

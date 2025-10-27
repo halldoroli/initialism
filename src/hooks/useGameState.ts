@@ -1,12 +1,43 @@
+import {
+  clearGameState,
+  loadGameState,
+  saveGameState,
+} from "@/app/utils/storage";
 import { useState, useEffect, useCallback } from "react";
 
-export default function useGameState(answer: string, MAX_GUESSES: number) {
+const MAX_GUESSES = 6;
+
+export default function useGameState(answer: string, gameId: string) {
   const answerLength = answer.replace(/\s/g, "").length;
+
   const [correctLetters, setCorrectLetters] = useState<number[]>([]);
   const [guess, setGuess] = useState("");
   const [guessesLeft, setGuesses] = useState(MAX_GUESSES);
   const [gameOver, setGameOver] = useState(false);
   const [winner, setWinner] = useState(false);
+
+  useEffect(() => {
+    const saved = loadGameState(gameId);
+    if (saved) {
+      setCorrectLetters(saved.correctLetters);
+      setGuesses(saved.guessesLeft);
+      setGameOver(saved.gameOver);
+      setWinner(saved.winner);
+    } else {
+      clearGameState();
+    }
+  }, [gameId]);
+
+  useEffect(() => {
+    const state = {
+      gameId,
+      correctLetters,
+      guessesLeft,
+      gameOver,
+      winner,
+    };
+    saveGameState(state);
+  }, [gameId, correctLetters, guessesLeft, gameOver, winner]);
 
   const submitGuess = useCallback(() => {
     const answerChars = answer.split("");

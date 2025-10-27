@@ -5,10 +5,11 @@ import LetterBoxes from "./letter-boxes";
 import useGameState from "@/hooks/useGameState";
 import { GuessesBadge } from "./guesses-badge";
 import GameOverDialog from "./game-over-dialog";
+import { Confetti } from "./ui/confetti";
 
+const gameId = "1";
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
-const MAX_GUESSES = 6;
 
 export default function Game() {
   const {
@@ -18,7 +19,7 @@ export default function Game() {
     gameOver,
     winner,
     handleKeyInput,
-  } = useGameState(answer, MAX_GUESSES);
+  } = useGameState(answer, gameId);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -39,6 +40,9 @@ export default function Game() {
           initialism={initialism}
           answer={answer}
         />
+        {gameOver && winner && (
+          <Confetti className="pointer-events-none absolute top-0 left-0 z-0 size-full" />
+        )}
       </div>
     </div>
   );

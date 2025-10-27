@@ -8,6 +8,8 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import Link from "next/link";
+import { Badge } from "./ui/badge";
+import { Smile, Star } from "lucide-react";
 
 type GameOverDialogProps = {
   gameOver: boolean;
@@ -38,7 +40,12 @@ export default function GameOverDialog({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="font-mono">
         <DialogHeader>
-          <DialogTitle>{winner ? "You got it!" : "So close!"}</DialogTitle>
+          <DialogTitle>
+            <Badge variant="secondary" className={`${winner && "bg-yellow-500"} py-1.5 px-2.5 mr-3`}>
+              {winner ? <Star /> : <Smile />}
+            </Badge>
+            {winner ? "You got it!" : "So close!"}
+          </DialogTitle>
           <DialogDescription>
             {!winner && `${initialism} stands for ${answer}`}
           </DialogDescription>

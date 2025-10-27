@@ -5,6 +5,7 @@ import LetterBoxes from "./letter-boxes";
 import useGameState from "@/hooks/useGameState";
 import { GuessesBadge } from "./guesses-badge";
 import GameOverDialog from "./game-over-dialog";
+import { Confetti } from "./ui/confetti";
 
 const gameId = "1";
 const initialism = "FBI";
@@ -39,6 +40,9 @@ export default function Game() {
           initialism={initialism}
           answer={answer}
         />
+        {gameOver && winner && (
+          <Confetti className="pointer-events-none absolute top-0 left-0 z-0 size-full" />
+        )}
       </div>
     </div>
   );

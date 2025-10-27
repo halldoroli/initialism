@@ -41,7 +41,10 @@ export default function GameOverDialog({
       <DialogContent className="font-mono">
         <DialogHeader>
           <DialogTitle>
-            <Badge variant="secondary" className={`${winner && "bg-yellow-500"} py-1.5 px-2.5 mr-3`}>
+            <Badge
+              variant="secondary"
+              className={`${winner && "bg-yellow-500"} mr-3 px-2.5 py-1.5`}
+            >
               {winner ? <Star /> : <Smile />}
             </Badge>
             {winner ? "You got it!" : "So close!"}

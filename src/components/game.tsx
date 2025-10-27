@@ -8,7 +8,7 @@ import GameOverDialog from "./game-over-dialog";
 
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
-const MAX_GUESSES = 1;
+const MAX_GUESSES = 6;
 
 export default function Game() {
   const {

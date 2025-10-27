@@ -1,4 +1,4 @@
-import { GameState } from "../types/game-state";
+import { GameState } from "@/types/game-state";
 
 const STORAGE_KEY = "gameState";
 

@@ -10,12 +10,15 @@ import {
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Smile, Star } from "lucide-react";
+import { StatisticsCard } from "./statistics-card";
+import { Statistics } from "@/types/statistics";
 
 type GameOverDialogProps = {
   gameOver: boolean;
   winner: boolean;
   initialism: string;
   answer: string;
+  statistics: Statistics;
 };
 
 export default function GameOverDialog({
@@ -23,6 +26,7 @@ export default function GameOverDialog({
   winner,
   initialism,
   answer,
+  statistics,
 }: GameOverDialogProps) {
   const [open, setOpen] = useState(false);
 
@@ -53,8 +57,11 @@ export default function GameOverDialog({
             {!winner && `${initialism} stands for ${answer}`}
           </DialogDescription>
         </DialogHeader>
+        <StatisticsCard statistics={statistics} />
         <DialogFooter className="text-xs">
-          by <Link href="https://holi.is/">holi.is</Link>
+          <div>
+            by <Link href="https://holi.is/">holi.is</Link>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

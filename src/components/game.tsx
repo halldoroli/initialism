@@ -6,6 +6,7 @@ import useGameState from "@/hooks/useGameState";
 import { GuessesBadge } from "./guesses-badge";
 import GameOverDialog from "./game-over-dialog";
 import { Confetti } from "./ui/confetti";
+import { loadStatistics } from "@/utils/statistics";
 
 const gameId = "1";
 const initialism = "FBI";
@@ -20,6 +21,8 @@ export default function Game() {
     winner,
     handleKeyInput,
   } = useGameState(answer, gameId);
+
+  const statistics = loadStatistics();
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -39,6 +42,7 @@ export default function Game() {
           winner={winner}
           initialism={initialism}
           answer={answer}
+          statistics={statistics}
         />
         {gameOver && winner && (
           <Confetti className="pointer-events-none absolute top-0 left-0 z-0 size-full" />

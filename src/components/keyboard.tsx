@@ -20,12 +20,12 @@ const Keyboard = ({ onKeyPress }: KeyboardProps) => {
             <button
               key={key}
               onClick={() => onKeyPress(key)}
-              className={`flex h-10 items-center justify-center rounded-xs bg-gray-500 text-white sm:h-12 dark:bg-gray-700 ${
+              className={`flex h-10 cursor-pointer items-center justify-center rounded-xs text-white transition-colors duration-300 sm:h-12 ${
                 key === "Enter"
-                  ? "w-10 bg-green-600 sm:w-12 dark:bg-green-800"
+                  ? "w-10 bg-green-600 hover:bg-green-700 sm:w-12 dark:bg-green-800 dark:hover:bg-green-900"
                   : key === "Backspace"
-                    ? "w-10 bg-red-700 sm:w-12 dark:bg-red-900"
-                    : "w-8 sm:w-10"
+                    ? "w-10 bg-red-700 hover:bg-red-800 sm:w-12 dark:bg-red-900 dark:hover:bg-red-950"
+                    : "w-8 bg-gray-500 hover:bg-gray-600 sm:w-10 dark:bg-gray-700 dark:hover:bg-gray-800"
               }`}
             >
               {key === "Enter" ? (

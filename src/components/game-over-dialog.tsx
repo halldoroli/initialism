@@ -7,6 +7,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
+import Link from "next/link";
 
 type GameOverDialogProps = {
   gameOver: boolean
@@ -39,8 +40,9 @@ export default function GameOverDialog({ gameOver, winner, initialism, answer }:
             {!winner && `${initialism} stands for ${answer}`}
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter>
-        
+        Statistics
+        <DialogFooter className="text-xs">
+          by <Link href="https://holi.is/">holi.is</Link>
         </DialogFooter>
       </DialogContent>
     </Dialog>

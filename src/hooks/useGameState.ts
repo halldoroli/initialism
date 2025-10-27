@@ -1,3 +1,4 @@
+import { updateStatistics } from "@/utils/statistics";
 import { clearGameState, loadGameState, saveGameState } from "@/utils/storage";
 import { useState, useEffect, useCallback } from "react";
 
@@ -64,11 +65,13 @@ export default function useGameState(answer: string, gameId: string) {
     if (allCorrect) {
       setGameOver(true);
       setWinner(true);
+      updateStatistics(true, MAX_GUESSES - (guessesLeft - 1));
       return;
     }
 
     if (guessesLeft - 1 <= 0) {
       setGameOver(true);
+      updateStatistics(false, 0);
     }
   }, [answer, guess, correctLetters, guessesLeft]);
 

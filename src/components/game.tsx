@@ -4,10 +4,11 @@ import Keyboard from "./keyboard";
 import LetterBoxes from "./letter-boxes";
 import useGameState from "@/hooks/useGameState";
 import { GuessesBadge } from "./guesses-badge";
+import GameOverDialog from "./game-over-dialog";
 
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
-const MAX_GUESSES = 6;
+const MAX_GUESSES = 1;
 
 export default function Game() {
   const {
@@ -21,16 +22,6 @@ export default function Game() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      {gameOver && winner && (
-        <h1 className="scroll-m-20 pt-16 text-center font-sans text-4xl font-extrabold tracking-tight">
-          You got it!
-        </h1>
-      )}
-      {gameOver && !winner && (
-        <h1 className="scroll-m-20 pt-16 text-center font-sans text-4xl font-extrabold tracking-tight">
-          So close! {initialism} stands for {answer}
-        </h1>
-      )}
       <div className="flex flex-col gap-16 pt-16">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="font-mono text-4xl font-bold">{initialism}</h1>
@@ -42,6 +33,7 @@ export default function Game() {
           correctLetters={correctLetters}
         />
         <Keyboard onKeyPress={handleKeyInput} />
+        <GameOverDialog gameOver={gameOver} winner={winner} initialism={initialism} answer={answer} />
       </div>
     </div>
   );

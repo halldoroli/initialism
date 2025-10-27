@@ -53,8 +53,10 @@ export default function GameOverDialog({
             {!winner && `${initialism} stands for ${answer}`}
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="text-xs">
-          by <Link href="https://holi.is/">holi.is</Link>
+        <DialogFooter className="text-xs flex">
+          <div>
+            by <Link href="https://holi.is/">holi.is</Link>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

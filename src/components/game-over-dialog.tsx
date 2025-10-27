@@ -31,7 +31,7 @@ export default function GameOverDialog({
     if (gameOver) {
       setTimeout(() => {
         setOpen(true);
-      }, 1000);
+      }, 2000);
     } else {
       setOpen(false);
     }

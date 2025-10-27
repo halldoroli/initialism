@@ -1,8 +1,4 @@
-import {
-  clearGameState,
-  loadGameState,
-  saveGameState,
-} from "@/utils/storage";
+import { clearGameState, loadGameState, saveGameState } from "@/utils/storage";
 import { useState, useEffect, useCallback } from "react";
 
 const MAX_GUESSES = 6;

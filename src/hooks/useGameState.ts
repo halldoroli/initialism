@@ -2,7 +2,7 @@ import {
   clearGameState,
   loadGameState,
   saveGameState,
-} from "@/app/utils/storage";
+} from "@/utils/storage";
 import { useState, useEffect, useCallback } from "react";
 
 const MAX_GUESSES = 6;

@@ -10,13 +10,18 @@ import {
 import Link from "next/link";
 
 type GameOverDialogProps = {
-  gameOver: boolean
-  winner: boolean
-  initialism: string
-  answer: string
-}
+  gameOver: boolean;
+  winner: boolean;
+  initialism: string;
+  answer: string;
+};
 
-export default function GameOverDialog({ gameOver, winner, initialism, answer }: GameOverDialogProps) {
+export default function GameOverDialog({
+  gameOver,
+  winner,
+  initialism,
+  answer,
+}: GameOverDialogProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -33,9 +38,7 @@ export default function GameOverDialog({ gameOver, winner, initialism, answer }:
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="font-mono">
         <DialogHeader>
-          <DialogTitle>
-            {winner ? "You got it!" : "So close!"}
-          </DialogTitle>
+          <DialogTitle>{winner ? "You got it!" : "So close!"}</DialogTitle>
           <DialogDescription>
             {!winner && `${initialism} stands for ${answer}`}
           </DialogDescription>

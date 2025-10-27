@@ -32,8 +32,13 @@ export default function Game() {
           guess={guess}
           correctLetters={correctLetters}
         />
-        <Keyboard onKeyPress={handleKeyInput} />
-        <GameOverDialog gameOver={gameOver} winner={winner} initialism={initialism} answer={answer} />
+        <Keyboard onKeyPress={handleKeyInput} disabled={gameOver} />
+        <GameOverDialog
+          gameOver={gameOver}
+          winner={winner}
+          initialism={initialism}
+          answer={answer}
+        />
       </div>
     </div>
   );

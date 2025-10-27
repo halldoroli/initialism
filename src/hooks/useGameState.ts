@@ -1,4 +1,8 @@
-import { loadGameState, saveGameState } from "@/app/utils/storage";
+import {
+  clearGameState,
+  loadGameState,
+  saveGameState,
+} from "@/app/utils/storage";
 import { useState, useEffect, useCallback } from "react";
 
 const MAX_GUESSES = 6;
@@ -19,6 +23,8 @@ export default function useGameState(answer: string, gameId: string) {
       setGuesses(saved.guessesLeft);
       setGameOver(saved.gameOver);
       setWinner(saved.winner);
+    } else {
+      clearGameState();
     }
   }, [gameId]);
 

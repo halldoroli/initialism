@@ -7,10 +7,12 @@ import { GuessesBadge } from "./guesses-badge";
 import GameOverDialog from "./game-over-dialog";
 import { Confetti } from "./ui/confetti";
 import { loadStatistics } from "@/utils/statistics";
+import { AbbreviationTypeBadge } from "./abbreviation-type-badge";
 
 const gameId = "1";
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
+const abbreviationType = "initialism";
 
 export default function Game() {
   const {
@@ -29,7 +31,10 @@ export default function Game() {
       <div className="flex flex-col gap-16 pt-16">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="font-mono text-4xl font-bold">{initialism}</h1>
-          <GuessesBadge guessesLeft={guessesLeft} />
+          <div className="flex gap-2">
+            <GuessesBadge guessesLeft={guessesLeft} />
+            <AbbreviationTypeBadge type={abbreviationType} />
+          </div>
         </div>
         <LetterBoxes
           answer={answer.toUpperCase()}

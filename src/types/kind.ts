@@ -1,1 +1,1 @@
-export type Kind = "initialism" | "abbreviation";
+export type Kind = "initialism" | "acronym";

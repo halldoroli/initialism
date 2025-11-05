@@ -9,14 +9,12 @@ import { Confetti } from "./ui/confetti";
 import { loadStatistics } from "@/utils/statistics";
 import { AbbreviationTypeBadge } from "./abbreviation-type-badge";
 import { CategoryBadge } from "./category-badge";
-
-const gameId = "1";
-const initialism = "FBI";
-const answer = "Federal Bureau of Investigation";
-const abbreviationType = "initialism";
-const category = "Organizations";
+import { getTodaysEntry } from "@/lib/daily-entry";
 
 export default function Game() {
+  const { gameId, abbreviation, answer, abbreviationType, category } =
+    getTodaysEntry();
+
   const {
     guess,
     correctLetters,
@@ -32,7 +30,7 @@ export default function Game() {
     <div className="flex flex-col items-center justify-center">
       <div className="flex flex-col gap-16 pt-16">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="font-mono text-4xl font-bold">{initialism}</h1>
+          <h1 className="font-mono text-4xl font-bold">{abbreviation}</h1>
           <div className="flex gap-2">
             <GuessesBadge guessesLeft={guessesLeft} />
             <AbbreviationTypeBadge type={abbreviationType} />
@@ -48,7 +46,7 @@ export default function Game() {
         <GameOverDialog
           gameOver={gameOver}
           winner={winner}
-          initialism={initialism}
+          initialism={abbreviation}
           answer={answer}
           statistics={statistics}
         />

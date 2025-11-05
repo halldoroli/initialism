@@ -12,6 +12,7 @@ import { Badge } from "./ui/badge";
 import { Smile, Star } from "lucide-react";
 import { StatisticsCard } from "./statistics-card";
 import { Statistics } from "@/types/statistics";
+import { NextGameTimer } from "./next-game-timer";
 
 type GameOverDialogProps = {
   gameOver: boolean;
@@ -59,6 +60,7 @@ export default function GameOverDialog({
         </DialogHeader>
         <StatisticsCard statistics={statistics} />
         <DialogFooter className="text-xs">
+          <NextGameTimer />
           <div>
             by <Link href="https://holi.is/">holi.is</Link>
           </div>

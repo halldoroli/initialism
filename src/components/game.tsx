@@ -8,11 +8,13 @@ import GameOverDialog from "./game-over-dialog";
 import { Confetti } from "./ui/confetti";
 import { loadStatistics } from "@/utils/statistics";
 import { AbbreviationTypeBadge } from "./abbreviation-type-badge";
+import { CategoryBadge } from "./category-badge";
 
 const gameId = "1";
 const initialism = "FBI";
 const answer = "Federal Bureau of Investigation";
 const abbreviationType = "initialism";
+const category = "Organizations";
 
 export default function Game() {
   const {
@@ -34,6 +36,7 @@ export default function Game() {
           <div className="flex gap-2">
             <GuessesBadge guessesLeft={guessesLeft} />
             <AbbreviationTypeBadge type={abbreviationType} />
+            <CategoryBadge category={category} />
           </div>
         </div>
         <LetterBoxes

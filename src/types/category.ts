@@ -1,7 +1,6 @@
 export type Category =
   | "Organizations"
   | "Companies"
-  | "Government"
   | "Tech"
   | "Science"
   | "Education"

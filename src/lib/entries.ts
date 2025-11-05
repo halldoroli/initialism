@@ -1,0 +1,88 @@
+import type { Entry } from "@/types/entry";
+
+export const entries: Entry[] = [
+  {
+    gameId: "1",
+    abbreviation: "DIY",
+    answer: "Do It Yourself",
+    abbreviationType: "initialism",
+    category: "Common",
+  },
+  {
+    gameId: "2",
+    abbreviation: "CPU",
+    answer: "Central Processing Unit",
+    abbreviationType: "initialism",
+    category: "Tech",
+  },
+  {
+    gameId: "3",
+    abbreviation: "FBI",
+    answer: "Federal Bureau of Investigation",
+    abbreviationType: "initialism",
+    category: "Organizations",
+  },
+  {
+    gameId: "4",
+    abbreviation: "NASA",
+    answer: "National Aeronautics and Space Administration",
+    abbreviationType: "acronym",
+    category: "Organizations",
+  },
+  {
+    gameId: "5",
+    abbreviation: "CEO",
+    answer: "Chief Executive Officer",
+    abbreviationType: "initialism",
+    category: "Business",
+  },
+  {
+    gameId: "6",
+    abbreviation: "ATM",
+    answer: "Automated Teller Machine",
+    abbreviationType: "initialism",
+    category: "Tech",
+  },
+  {
+    gameId: "7",
+    abbreviation: "MRI",
+    answer: "Magnetic Resonance Imaging",
+    abbreviationType: "initialism",
+    category: "Science",
+  },
+  {
+    gameId: "8",
+    abbreviation: "GIF",
+    answer: "Graphics Interchange Format",
+    abbreviationType: "acronym",
+    category: "Tech",
+  },
+  {
+    gameId: "9",
+    abbreviation: "FAQ",
+    answer: "Frequently Asked Questions",
+    abbreviationType: "initialism",
+    category: "Common",
+  },
+  {
+    gameId: "10",
+    abbreviation: "NBA",
+    answer: "National Basketball Association",
+    abbreviationType: "initialism",
+    category: "Sports",
+  },
+  {
+    gameId: "11",
+    abbreviation: "IMO",
+    answer: "In My Opinion",
+    abbreviationType: "initialism",
+    category: "Slang",
+  },
+  {
+    gameId: "12",
+    abbreviation: "EPL",
+    answer: "English Premier League",
+    abbreviationType: "initialism",
+    category: "Sports",
+  },
+];

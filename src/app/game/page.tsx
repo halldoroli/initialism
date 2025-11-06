@@ -3,8 +3,8 @@ import { Header } from "@/components/header";
 
 export default function GamePage() {
   return (
-    <div className="flex flex-col items-center px-4 pt-8">
-      <div className="flex w-full max-w-3xl flex-col gap-6">
+    <div className="flex h-screen flex-col items-center">
+      <div className="flex h-screen w-full max-w-3xl flex-col">
         <Header title="initialism" />
         <Game />
       </div>

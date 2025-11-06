@@ -14,7 +14,7 @@ export default function LetterBoxes({
   const words = answer.split(" ");
 
   return (
-    <div className="flex flex-wrap justify-center gap-8">
+    <div className="flex h-full flex-wrap items-center justify-center gap-8 p-8">
       {words.map((word, wi) => (
         <div key={wi} className="flex gap-1 sm:gap-2">
           {word.split("").map((char, localIndex) => {

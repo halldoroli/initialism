@@ -15,7 +15,7 @@ const Keyboard = ({ onKeyPress, disabled }: KeyboardProps) => {
   ];
 
   return (
-    <div className="font-mono">
+    <div className="flex flex-col justify-center font-mono h-full">
       {rows.map((row, i) => (
         <div key={i} className="mb-3 flex justify-center gap-1 sm:gap-2">
           {row.map((key) => (

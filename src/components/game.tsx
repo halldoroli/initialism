@@ -27,33 +27,31 @@ export default function Game() {
   const statistics = loadStatistics();
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex flex-col gap-16 pt-16">
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="font-mono text-4xl font-bold">{abbreviation}</h1>
-          <div className="flex gap-2">
-            <GuessesBadge guessesLeft={guessesLeft} />
-            <AbbreviationTypeBadge type={abbreviationType} />
-            <CategoryBadge category={category} />
-          </div>
+    <div className="grid grid-rows-3 h-screen">
+      <div className="flex flex-col items-center justify-center gap-4 h-full">
+        <h1 className="font-mono text-4xl font-bold">{abbreviation}</h1>
+        <div className="flex gap-2">
+          <GuessesBadge guessesLeft={guessesLeft} />
+          <AbbreviationTypeBadge type={abbreviationType} />
+          <CategoryBadge category={category} />
         </div>
-        <LetterBoxes
-          answer={answer.toUpperCase()}
-          guess={guess}
-          correctLetters={correctLetters}
-        />
-        <Keyboard onKeyPress={handleKeyInput} disabled={gameOver} />
-        <GameOverDialog
-          gameOver={gameOver}
-          winner={winner}
-          initialism={abbreviation}
-          answer={answer}
-          statistics={statistics}
-        />
-        {gameOver && winner && (
-          <Confetti className="pointer-events-none absolute top-0 left-0 z-0 size-full" />
-        )}
       </div>
+      <LetterBoxes
+        answer={answer.toUpperCase()}
+        guess={guess}
+        correctLetters={correctLetters}
+      />
+      <Keyboard onKeyPress={handleKeyInput} disabled={gameOver} />
+      <GameOverDialog
+        gameOver={gameOver}
+        winner={winner}
+        initialism={abbreviation}
+        answer={answer}
+        statistics={statistics}
+      />
+      {gameOver && winner && (
+        <Confetti className="pointer-events-none absolute top-0 left-0 z-0 size-full" />
+      )}
     </div>
   );
 }

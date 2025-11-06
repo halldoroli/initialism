@@ -9,7 +9,7 @@ type HeaderProps = {
 
 export function Header({ title }: HeaderProps) {
   return (
-    <div className="flex w-full items-center justify-between">
+    <div className="flex w-full items-center justify-between pt-2">
       <div className="flex items-center gap-2">
         <h1 className="font-mono text-xl">{title}</h1>
         {title !== "initialism" && (

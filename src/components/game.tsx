@@ -27,7 +27,7 @@ export default function Game() {
   const statistics = loadStatistics();
 
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-full flex-col">
       <div className="flex flex-col items-center justify-center gap-4 p-8">
         <h1 className="font-mono text-4xl font-bold">{abbreviation}</h1>
         <div className="flex gap-2">

@@ -1,5 +1,6 @@
 import { ArrowRight, X } from "lucide-react";
 import React from "react";
+import { Button } from "./ui/button";
 
 interface KeyboardProps {
   onKeyPress: (key: string) => void;
@@ -18,17 +19,18 @@ const Keyboard = ({ onKeyPress, disabled }: KeyboardProps) => {
       {rows.map((row, i) => (
         <div key={i} className="mb-3 flex justify-center gap-1 sm:gap-2">
           {row.map((key) => (
-            <button
+            <Button
               key={key}
               onClick={() => onKeyPress(key)}
               disabled={disabled}
-              className={`flex h-10 cursor-pointer items-center justify-center rounded-xs text-white transition-colors duration-300 disabled:cursor-auto disabled:opacity-70 sm:h-12 ${
+              className={`flex h-10 sm:h-12 ${
                 key === "Enter"
-                  ? "disabled:dark:hover:dbg-green-800 w-10 bg-green-600 hover:bg-green-700 disabled:hover:bg-green-600 sm:w-12 dark:bg-green-800 dark:hover:bg-green-900"
+                  ? "bg-primary hover:bg-primary/80 w-10 sm:w-12"
                   : key === "Backspace"
-                    ? "w-10 bg-red-700 hover:bg-red-800 disabled:hover:bg-red-700 sm:w-12 dark:bg-red-900 dark:hover:bg-red-950 disabled:dark:hover:bg-red-900"
-                    : "w-8 bg-gray-500 hover:bg-gray-600 disabled:hover:bg-gray-500 sm:w-10 dark:bg-gray-700 dark:hover:bg-gray-800 disabled:dark:hover:bg-gray-700"
+                    ? "bg-destructive hover:bg-destructive/80 w-10 sm:w-12"
+                    : "w-8 sm:w-10"
               }`}
+              variant="secondary"
             >
               {key === "Enter" ? (
                 <ArrowRight size="16" />
@@ -37,7 +39,7 @@ const Keyboard = ({ onKeyPress, disabled }: KeyboardProps) => {
               ) : (
                 key
               )}
-            </button>
+            </Button>
           ))}
         </div>
       ))}

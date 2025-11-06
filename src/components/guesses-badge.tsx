@@ -10,7 +10,7 @@ export function GuessesBadge({ guessesLeft }: GuessesBadgeProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Badge className="text-md bg-red-700 px-3 font-mono text-white">
+        <Badge className="text-md bg-red-500 px-3 font-mono text-white">
           {guessesLeft < 2 ? <HeartCrack /> : <Heart />}
           {guessesLeft}
         </Badge>

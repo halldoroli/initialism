@@ -27,8 +27,8 @@ export default function Game() {
   const statistics = loadStatistics();
 
   return (
-    <div className="grid grid-rows-3 h-screen">
-      <div className="flex flex-col items-center justify-center gap-4 h-full">
+    <div className="flex flex-col h-screen gap-2 *:border">
+      <div className="flex-1 flex flex-col items-center justify-center gap-4">
         <h1 className="font-mono text-4xl font-bold">{abbreviation}</h1>
         <div className="flex gap-2">
           <GuessesBadge guessesLeft={guessesLeft} />

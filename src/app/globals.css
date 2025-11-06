@@ -42,11 +42,22 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-blue-50: oklch(0.965 0.01 273.43);
+  --color-blue-100: oklch(0.931 0.017 271.27);
+  --color-blue-200: oklch(0.855 0.038 268.87);
+  --color-blue-300: oklch(0.786 0.057 267.14);
+  --color-blue-400: oklch(0.717 0.077 266.06);
+  --color-blue-500: oklch(0.648 0.097 262.99);
+  --color-blue-600: oklch(0.571 0.09 262.87);
+  --color-blue-700: oklch(0.501 0.079 262.76);
+  --color-blue-800: oklch(0.38 0.061 262.96);
+  --color-blue-900: oklch(0.26 0.041 261.85);
+  --color-blue-950: oklch(0.197 0.032 264.54);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.95 0 0);
   --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
@@ -81,7 +92,7 @@
 }
 
 .dark {
-  --background: oklch(0.13 0.028 261.692);
+  --background: oklch(0.197 0.032 264.54);
   --foreground: oklch(0.985 0.002 247.839);
   --card: oklch(0.21 0.034 264.665);
   --card-foreground: oklch(0.985 0.002 247.839);

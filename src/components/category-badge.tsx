@@ -4,7 +4,6 @@ import { Badge } from "./ui/badge";
 import {
   categoryDescriptions,
   categoryIcons,
-  categoryStyles,
 } from "@/lib/categories";
 
 type CategoryBadgeProps = {
@@ -16,9 +15,7 @@ export function CategoryBadge({ category }: CategoryBadgeProps) {
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge
-          className={`text-md flex items-center gap-1 px-3 font-mono ${
-            categoryStyles[category]
-          }`}
+          className={`text-md flex items-center gap-1 px-3 font-mono bg-blue-800 text-white`}
         >
           {categoryIcons[category]}
           {category}

@@ -12,7 +12,7 @@ export function AbbreviationTypeBadge({ type }: AbbreviationTypeBadgeProps) {
       <TooltipTrigger asChild>
         <Badge
           className={`text-md px-3 font-mono text-white ${
-            type === "initialism" ? "bg-slate-700" : "bg-zinc-700"
+            type === "initialism" ? "bg-primary" : "bg-secondary"
           }`}
         >
           {type}

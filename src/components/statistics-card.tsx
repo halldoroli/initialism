@@ -25,15 +25,17 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
       </div>
 
       <div className="mt-4 space-y-2">
-        <h4 className="text-sm text-muted-foreground">Guess distribution</h4>
+        <h4 className="text-muted-foreground text-sm">Guess distribution</h4>
         {guessDistribution.map((count, index) => {
           const widthPercent = (count / maxGuesses) * 100;
           return (
             <div key={index} className="flex items-center space-x-2">
-              <span className="w-4 text-xs text-muted-foreground">{index + 1}</span>
-              <div className="h-4 flex-1 overflow-hidden rounded bg-muted">
+              <span className="text-muted-foreground w-4 text-xs">
+                {index + 1}
+              </span>
+              <div className="bg-muted h-4 flex-1 overflow-hidden rounded">
                 <div
-                  className="h-4 rounded bg-success"
+                  className="bg-success h-4 rounded"
                   style={{ width: `${widthPercent}%` }}
                 />
               </div>

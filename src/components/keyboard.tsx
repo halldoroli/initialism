@@ -23,11 +23,11 @@ const Keyboard = ({ onKeyPress, disabled }: KeyboardProps) => {
               key={key}
               onClick={() => onKeyPress(key)}
               disabled={disabled}
-              className={`flex h-10 sm:h-12 rounded-xs ${
+              className={`flex h-10 rounded-xs sm:h-12 ${
                 key === "Enter"
-                  ? "bg-primary hover:bg-primary/80 w-10 sm:w-12 text-white"
+                  ? "bg-primary hover:bg-primary/80 w-10 text-white sm:w-12"
                   : key === "Backspace"
-                    ? "bg-destructive hover:bg-destructive/80 w-10 sm:w-12 text-white"
+                    ? "bg-destructive hover:bg-destructive/80 w-10 text-white sm:w-12"
                     : "w-8 sm:w-10"
               }`}
               variant="secondary"

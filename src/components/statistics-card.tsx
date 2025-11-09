@@ -24,7 +24,7 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
         <span className="font-mono">{winPercentage}%</span>
       </div>
 
-      <div className="mt-4 space-y-2">
+      <div className="space-y-2">
         <p className="text-muted-foreground text-sm">Guess distribution</p>
         {guessDistribution.map((count, index) => {
           const widthPercent = (count / maxGuesses) * 100;

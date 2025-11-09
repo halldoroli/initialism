@@ -35,7 +35,7 @@ export default function LetterBoxes({
             return (
               <div
                 key={globalIndex}
-                className={`flex h-6 w-6 items-center justify-center border-2 font-sans transition-all duration-[500ms] ease-in-out sm:h-10 sm:w-10 ${
+                className={`flex h-6 w-6 items-center justify-center border-2 transition-all duration-[500ms] ease-in-out sm:h-10 sm:w-10 ${
                   isCorrect
                     ? "bg-success border-success text-white"
                     : "bg-muted"

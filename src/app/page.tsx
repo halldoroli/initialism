@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex h-full flex-col items-center justify-center space-y-8">
+    <div className="flex h-screen flex-col items-center justify-center space-y-8">
       <Title />
       <div className="flex items-center gap-1">
-        <Button variant="outline" className="rounded-full font-mono" asChild>
+        <Button variant="outline" className="rounded-full" asChild>
           <Link href="/game">
             <ChevronRightIcon />
             play

@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Mono } from "next/font/google";
+import { DM_Mono, Cabin } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const cabinSans = Cabin({
+  variable: "--font-cabin-sans",
   subsets: ["latin"],
+  weight: "400",
+});
+
+const cabinSerif = Cabin({
+  variable: "--font-cabin-serif",
+  subsets: ["latin"],
+  weight: "700",
 });
 
 const dmMono = DM_Mono({
@@ -26,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable} ${dmMono.variable} antialiased`}>
+      <body
+        className={`${cabinSans.variable} ${cabinSerif.variable} ${dmMono.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

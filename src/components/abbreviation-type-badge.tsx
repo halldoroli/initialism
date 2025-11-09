@@ -11,7 +11,7 @@ export function AbbreviationTypeBadge({ type }: AbbreviationTypeBadgeProps) {
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge
-          className={`text-md px-3 font-mono text-white ${
+          className={`text-md px-3 text-white ${
             type === "initialism" ? "bg-primary" : "bg-secondary"
           }`}
         >
@@ -19,7 +19,7 @@ export function AbbreviationTypeBadge({ type }: AbbreviationTypeBadgeProps) {
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
-        <p className="font-mono">
+        <p>
           {type === "initialism"
             ? "Each letter is pronounced separately"
             : "Pronounced as a word"}

@@ -56,14 +56,14 @@ export function CategoryBadge({ category }: CategoryBadgeProps) {
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge
-          className={`text-md flex items-center gap-1 bg-blue-800 px-3 font-mono text-white`}
+          className={`text-md flex items-center gap-1 bg-blue-800 px-3 text-white`}
         >
           {categoryIcons[category]}
           {category}
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
-        <p className="font-mono">{categoryDescriptions[category]}</p>
+        <p>{categoryDescriptions[category]}</p>
       </TooltipContent>
     </Tooltip>
   );

@@ -43,7 +43,7 @@ export default function GameOverDialog({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="font-mono">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>
             <Badge

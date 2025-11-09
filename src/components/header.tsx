@@ -11,12 +11,12 @@ export function Header({ title }: HeaderProps) {
   return (
     <div className="flex w-full items-center justify-between p-4">
       <div className="flex items-center gap-2">
-        <h1 className="font-mono text-xl">{title}</h1>
+        <h1 className="text-xl">{title}</h1>
         {title !== "initialism" && (
           <Button
             variant="outline"
             size="sm"
-            className="rounded-full font-mono"
+            className="rounded-full"
             asChild
           >
             <Link href="/game">
@@ -32,7 +32,7 @@ export function Header({ title }: HeaderProps) {
             <Button
               variant="outline"
               size="sm"
-              className="rounded-full font-mono"
+              className="rounded-full"
               asChild
               hidden
             >
@@ -44,7 +44,7 @@ export function Header({ title }: HeaderProps) {
             <Button
               variant="outline"
               size="sm"
-              className="rounded-full font-mono"
+              className="rounded-full"
               asChild
               hidden
             >

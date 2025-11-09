@@ -23,7 +23,6 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
         <span className="text-muted-foreground">Win percentage</span>
         <span className="font-mono">{winPercentage}%</span>
       </div>
-
       <div className="space-y-2">
         <p className="text-muted-foreground text-sm">Guess distribution</p>
         {guessDistribution.map((count, index) => {

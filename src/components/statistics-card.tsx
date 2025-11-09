@@ -17,15 +17,15 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
     <>
       <div className="flex justify-between text-sm">
         <span className="text-muted-foreground">Games played</span>
-        <span>{gamesPlayed}</span>
+        <span className="font-mono">{gamesPlayed}</span>
       </div>
       <div className="flex justify-between text-sm">
         <span className="text-muted-foreground">Win percentage</span>
-        <span>{winPercentage}%</span>
+        <span className="font-mono">{winPercentage}%</span>
       </div>
 
       <div className="mt-4 space-y-2">
-        <h4 className="text-muted-foreground text-sm">Guess distribution</h4>
+        <p className="text-muted-foreground text-sm">Guess distribution</p>
         {guessDistribution.map((count, index) => {
           const widthPercent = (count / maxGuesses) * 100;
           return (
@@ -39,7 +39,7 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
                   style={{ width: `${widthPercent}%` }}
                 />
               </div>
-              <span className="w-6 text-right text-xs">{count}</span>
+              <span className="w-6 text-right font-mono text-xs">{count}</span>
             </div>
           );
         })}

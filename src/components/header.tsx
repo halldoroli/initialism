@@ -13,12 +13,7 @@ export function Header({ title }: HeaderProps) {
       <div className="flex items-center gap-2">
         <h1 className="text-xl">{title}</h1>
         {title !== "initialism" && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="rounded-full"
-            asChild
-          >
+          <Button variant="outline" size="sm" className="rounded-full" asChild>
             <Link href="/game">
               <ChevronLeft />
               <span className="hidden sm:inline">back</span>

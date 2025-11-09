@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center space-y-8 h-screen">
+    <div className="flex h-screen flex-col items-center justify-center space-y-8">
       <Title />
       <div className="flex items-center gap-1">
         <Button variant="outline" className="rounded-full" asChild>

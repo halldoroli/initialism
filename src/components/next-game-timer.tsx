@@ -27,5 +27,9 @@ export function NextGameTimer() {
     return () => clearInterval(timer);
   }, []);
 
-  return <div>Next game in {time}</div>;
+  return (
+    <div>
+      Next game in <span className="font-mono">{time}</span>
+    </div>
+  );
 }

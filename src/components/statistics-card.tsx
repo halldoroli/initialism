@@ -29,7 +29,7 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
         {guessDistribution.map((count, index) => {
           const widthPercent = (count / maxGuesses) * 100;
           return (
-            <div key={index} className="flex items-center space-x-2">
+            <div key={index} className="flex items-center space-x-2 font-mono">
               <span className="text-muted-foreground w-4 text-xs">
                 {index + 1}
               </span>
@@ -39,7 +39,7 @@ export function StatisticsCard({ statistics }: StatisticsCardProps) {
                   style={{ width: `${widthPercent}%` }}
                 />
               </div>
-              <span className="w-6 text-right font-mono text-xs">{count}</span>
+              <span className="w-6 text-right text-xs">{count}</span>
             </div>
           );
         })}

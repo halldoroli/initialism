@@ -30,7 +30,7 @@ export default function InstructionsDialog() {
             Instructions
           </DialogTitle>
           <DialogDescription>
-            <p>Try to guess the hidden initialism (or sometimes an acronym)!</p>
+            Try to guess the hidden initialism (or sometimes an acronym)!
           </DialogDescription>
         </DialogHeader>
         <div className="text-muted-foreground flex flex-col gap-4 p-2 text-sm">

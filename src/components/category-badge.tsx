@@ -3,30 +3,30 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Badge } from "./ui/badge";
 import {
   Building,
-  Banknote,
-  Laptop,
-  Dna,
   GraduationCap,
-  BarChart,
   Drama,
-  MessageCircle,
-  Medal,
   Globe,
   Ruler,
   Star,
+  Building2,
+  Cable,
+  Microscope,
+  BriefcaseBusiness,
+  MessageCircleMore,
+  Volleyball,
 } from "lucide-react";
 import { JSX } from "react";
 
 export const categoryIcons: Record<Category, JSX.Element> = {
-  organizations: <Banknote />,
-  companies: <Building />,
-  tech: <Laptop />,
-  science: <Dna />,
+  organizations: <Building />,
+  companies: <Building2 />,
+  tech: <Cable />,
+  science: <Microscope />,
   education: <GraduationCap />,
-  business: <BarChart />,
+  business: <BriefcaseBusiness />,
   entertainment: <Drama />,
-  slang: <MessageCircle />,
-  sports: <Medal />,
+  slang: <MessageCircleMore />,
+  sports: <Volleyball />,
   geography: <Globe />,
   units: <Ruler />,
   common: <Star />,
@@ -56,7 +56,7 @@ export function CategoryBadge({ category }: CategoryBadgeProps) {
     <Tooltip>
       <TooltipTrigger asChild>
         <Badge
-          className={`text-md flex items-center gap-1 bg-blue-800 px-3 text-white`}
+          className={`text-md bg-accent-foreground flex items-center gap-1 px-3`}
         >
           {categoryIcons[category]}
           {category}

@@ -33,9 +33,9 @@ export default function InstructionsDialog() {
             Try to guess the hidden initialism (or sometimes an acronym)!
           </DialogDescription>
         </DialogHeader>
-        <div className="text-muted-foreground flex flex-col gap-4 pt-8 pb-8 text-sm">
+        <div className="flex flex-col gap-8 pt-8 pb-8 text-sm">
           <p>
-            Type your guess, then press the Submit button or when you are ready.
+            Type your guess, then press the Submit button when you are ready.
           </p>
           <p>
             If a letter is correct and in the right spot, its box will turn

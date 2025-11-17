@@ -1,4 +1,4 @@
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, Delete } from "lucide-react";
 import React from "react";
 import { Button } from "./ui/button";
 
@@ -25,17 +25,23 @@ const Keyboard = ({ onKeyPress, disabled }: KeyboardProps) => {
               disabled={disabled}
               className={`flex h-10 rounded-xs sm:h-12 ${
                 key === "Enter"
-                  ? "bg-primary hover:bg-primary/80 w-10 text-white sm:w-12"
+                  ? "bg-primary hover:bg-primary/80 w-18 text-white sm:w-20"
                   : key === "Backspace"
-                    ? "bg-destructive hover:bg-destructive/80 w-10 text-white sm:w-12"
+                    ? "bg-destructive hover:bg-destructive/80 w-18 text-white sm:w-20"
                     : "w-8 sm:w-10"
               }`}
               variant="secondary"
             >
               {key === "Enter" ? (
-                <ArrowRight size="16" />
+                <div>
+                  <ArrowRight size="16" />
+                  Submit
+                </div>
               ) : key === "Backspace" ? (
-                <X size="16" />
+                <div>
+                  <Delete size="16" />
+                  Delete
+                </div>
               ) : (
                 key
               )}

@@ -41,7 +41,6 @@ export function Header({ title }: HeaderProps) {
               size="sm"
               className="rounded-full"
               asChild
-              hidden
             >
               <Link href="/instructions">
                 <Info />

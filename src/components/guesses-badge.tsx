@@ -10,7 +10,7 @@ export function GuessesBadge({ guessesLeft }: GuessesBadgeProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Badge className="text-md cursor-pointer bg-red-500 px-3 text-white">
+        <Badge className="text-md cursor-pointer bg-red-600 px-3 text-white">
           {guessesLeft < 2 ? <HeartCrack /> : <Heart />}
           {guessesLeft}
         </Badge>

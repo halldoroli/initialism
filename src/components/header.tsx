@@ -1,7 +1,8 @@
-import { Archive, ChevronLeft, Info } from "lucide-react";
+import { Archive, ChevronLeft } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import InstructionsDialog from "./instructions-dialog";
 
 type HeaderProps = {
   title: string;
@@ -36,17 +37,7 @@ export function Header({ title }: HeaderProps) {
                 <span className="hidden sm:inline">archive</span>
               </Link>
             </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="rounded-full"
-              asChild
-            >
-              <Link href="/instructions">
-                <Info />
-                <span className="hidden sm:inline">instructions</span>
-              </Link>
-            </Button>
+            <InstructionsDialog />
           </>
         )}
         <ThemeToggle />

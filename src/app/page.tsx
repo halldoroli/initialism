@@ -1,21 +1,12 @@
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Title } from "@/components/title";
-import { Button } from "@/components/ui/button";
-import { ChevronRightIcon } from "lucide-react";
-import Link from "next/link";
+import Game from "@/components/game";
+import { Header } from "@/components/header";
 
-export default function Home() {
+export default function GamePage() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center space-y-8">
-      <Title />
-      <div className="flex items-center gap-1">
-        <Button variant="outline" className="rounded-full" asChild>
-          <Link href="/game">
-            <ChevronRightIcon />
-            play
-          </Link>
-        </Button>
-        <ThemeToggle />
+    <div className="flex h-screen flex-col items-center">
+      <div className="flex h-screen w-full max-w-3xl flex-col">
+        <Header title="initialism" />
+        <Game />
       </div>
     </div>
   );

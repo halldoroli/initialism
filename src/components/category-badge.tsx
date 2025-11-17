@@ -1,5 +1,4 @@
 import { Category } from "@/types/category";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Badge } from "./ui/badge";
 import {
   Building,
@@ -16,6 +15,7 @@ import {
   Volleyball,
 } from "lucide-react";
 import { JSX } from "react";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 export const categoryIcons: Record<Category, JSX.Element> = {
   organizations: <Building />,
@@ -53,18 +53,18 @@ type CategoryBadgeProps = {
 
 export function CategoryBadge({ category }: CategoryBadgeProps) {
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
+    <Popover>
+      <PopoverTrigger asChild>
         <Badge
-          className={`text-md bg-accent-foreground flex items-center gap-1 px-3`}
+          className={`text-md bg-accent-foreground flex cursor-pointer items-center gap-1 px-3`}
         >
           {categoryIcons[category]}
           {category}
         </Badge>
-      </TooltipTrigger>
-      <TooltipContent>
+      </PopoverTrigger>
+      <PopoverContent>
         <p>{categoryDescriptions[category]}</p>
-      </TooltipContent>
-    </Tooltip>
+      </PopoverContent>
+    </Popover>
   );
 }

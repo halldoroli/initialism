@@ -1,6 +1,6 @@
 import { Heart, HeartCrack } from "lucide-react";
 import { Badge } from "./ui/badge";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 type GuessesBadgeProps = {
   guessesLeft: number;
@@ -8,20 +8,20 @@ type GuessesBadgeProps = {
 
 export function GuessesBadge({ guessesLeft }: GuessesBadgeProps) {
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <Badge className="text-md bg-red-500 px-3 text-white">
+    <Popover>
+      <PopoverTrigger asChild>
+        <Badge className="text-md cursor-pointer bg-red-500 px-3 text-white">
           {guessesLeft < 2 ? <HeartCrack /> : <Heart />}
           {guessesLeft}
         </Badge>
-      </TooltipTrigger>
-      <TooltipContent>
+      </PopoverTrigger>
+      <PopoverContent>
         <p>
           {guessesLeft === 1
             ? "Last guess!"
             : `${guessesLeft} guesses remaining`}
         </p>
-      </TooltipContent>
-    </Tooltip>
+      </PopoverContent>
+    </Popover>
   );
 }
